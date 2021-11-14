@@ -1,0 +1,65 @@
+<!-- <html>
+  <body>
+      <h1><p>What is your name? and where are you from?
+        Don't lie with me, got it!!!
+      </p>
+          
+      </h1>
+
+    Only change code below this line
+    <script type="module" src="index.js"></script>
+
+    Only change code above this line
+  </body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html>
+<body>
+  <h1> Async and Await in JavaScript </h1>
+<script>
+  async function fun() {
+    return "Async keyword";
+  }
+ 
+fun().then((data) => {
+  console.log(data)
+});
+</script>
+</body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html>
+<body>
+  <h1> Async and Await in JavaScript </h1>
+  <h2 id='message'></h2>
+<script>
+async function fun() 
+{
+  var promise1 = new Promise(function(Res, Rej){
+  return Res("Hello, World!!");
+});
+document.getElementById("message").innerHTM = await promise1;
+}
+ 
+console.log(fun());
+</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<body>
+  <h2> Async and Await in JavaScript </h2>
+<script>
+function fun() {
+  let promise = Promise.resolve('Hello, World!!!');
+  let result = await promise; 
+  // SyntaxError: await is only valid in async functions.
+}
+ 
+fun();
+</script>
+</body>
+</html>

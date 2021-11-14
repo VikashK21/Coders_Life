@@ -1,0 +1,1639 @@
+navgurukul20@navgurukul20-ThinkPad-E14:~$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.27-0ubuntu0.20.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> databases
+    -> show databases
+    -> show databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databases
+show databases
+show databases' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| vikash             |
++--------------------+
+5 rows in set (0.62 sec)
+
+mysql> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| vikash             |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use sys
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> use vikash
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> create kira
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'kira' at line 1
+mysql> creat database kiran
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'creat database kiran' at line 1
+mysql> create database kiran
+    -> ;
+Query OK, 1 row affected (0.86 sec)
+
+mysql> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| kiran              |
+| mysql              |
+| performance_schema |
+| sys                |
+| vikash             |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> use kiran;
+Database changed
+mysql> use vikash;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| kiran              |
+| mysql              |
+| performance_schema |
+| sys                |
+| vikash             |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> use vikash;
+Database changed
+mysql> desc vikash;
+ERROR 1146 (42S02): Table 'vikash.vikash' doesn't exist
+mysql> show tables;
++------------------+
+| Tables_in_vikash |
++------------------+
+| list             |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> cler;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'cler' at line 1
+mysql> clear;
+mysql> 
+mysql> create database groot;
+Query OK, 1 row affected (0.59 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| groot              |
+| information_schema |
+| kiran              |
+| mysql              |
+| performance_schema |
+| sys                |
+| vikash             |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> create database groot1;
+Query OK, 1 row affected (0.90 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| groot              |
+| groot1             |
+| information_schema |
+| kiran              |
+| mysql              |
+| performance_schema |
+| sys                |
+| vikash             |
++--------------------+
+8 rows in set (0.00 sec)
+
+mysql> use groot;
+Database changed
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> drop groot1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'groot1' at line 1
+mysql> drop database groot1;
+Query OK, 0 rows affected (1.07 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| groot              |
+| information_schema |
+| kiran              |
+| mysql              |
+| performance_schema |
+| sys                |
+| vikash             |
++--------------------+
+7 rows in set (0.01 sec)
+
+mysql> delete database kiran;
+ERROR 1064 (42000): You have an egorror in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database kiran' at line 1
+mysql> 
+mysql> use groot;
+Database changed
+mysql> show tbles;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tbles' at line 1
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> create table vikash;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table vikash(id int(10),name varchar,age int,Ph_no int(11) not null);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',age int,Ph_no int(11) not null)' at line 1
+mysql> create table vikash(id int(10),name varchar,age int,Ph_no int(11) notnull);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',age int,Ph_no int(11) notnull)' at line 1
+mysql> create table vikash(id int(10),name varchar,age int,Ph_no int(11));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',age int,Ph_no int(11))' at line 1
+mysql> create table vikash(id int(10),name var char,age int,Ph_no int(11));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'var char,age int,Ph_no int(11))' at line 1
+mysql> create table vikash(id int(10),name varchar(50),age int,Ph_no int(11));
+Query OK, 0 rows affected, 2 warnings (2.99 sec)
+
+mysql> desc vikash;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(50) | YES  |     | NULL    |       |
+| age   | int         | YES  |     | NULL    |       |
+| Ph_no | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select *from viksh;
+ERROR 1146 (42S02): Table 'groot.viksh' doesn't exist
+mysql> select *from vikash;
+Empty set (0.00 sec)
+
+mysql> insert into vikash values(1,"hulk",20,9876543210);
+ERROR 1264 (22003): Out of range value for column 'Ph_no' at row 1
+mysql> insert into vikash values(1,"hulk",20,987654321);
+Query OK, 1 row affected (0.49 sec)
+
+mysql> select *from vikash;
++------+------+------+-----------+
+| id   | name | age  | Ph_no     |
++------+------+------+-----------+
+|    1 | hulk |   20 | 987654321 |
++------+------+------+-----------+
+1 row in set (0.00 sec)
+
+mysql> show tables;
++-----------------+
+| Tables_in_groot |
++-----------------+
+| vikash          |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> desc vikash;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(50) | YES  |     | NULL    |       |
+| age   | int         | YES  |     | NULL    |       |
+| Ph_no | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select *from vikash;
++------+------+------+-----------+
+| id   | name | age  | Ph_no     |
++------+------+------+-----------+
+|    1 | hulk |   20 | 987654321 |
++------+------+------+-----------+
+1 row in set (0.00 sec)
+
+mysql> insert into vikash values(2,"steve",21,9876598);
+Query OK, 1 row affected (0.55 sec)
+
+mysql> select *from vikash;
++------+-------+------+-----------+
+| id   | name  | age  | Ph_no     |
++------+-------+------+-----------+
+|    1 | hulk  |   20 | 987654321 |
+|    2 | steve |   21 |   9876598 |
++------+-------+------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> select id from vikash;
++------+
+| id   |
++------+
+|    1 |
+|    2 |
++------+
+2 rows in set (0.00 sec)
+
+mysql> select ph_no from vikash;
++-----------+
+| ph_no     |
++-----------+
+| 987654321 |
+|   9876598 |
++-----------+
+2 rows in set (0.00 sec)
+
+mysql> select id,name from vikash;
++------+-------+
+| id   | name  |
++------+-------+
+|    1 | hulk  |
+|    2 | steve |
++------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select ph_no,id,age,name from vikash;
++-----------+------+------+-------+
+| ph_no     | id   | age  | name  |
++-----------+------+------+-------+
+| 987654321 |    1 |   20 | hulk  |
+|   9876598 |    2 |   21 | steve |
++-----------+------+------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select *from vikash;
++------+-------+------+-----------+
+| id   | name  | age  | Ph_no     |
++------+-------+------+-----------+
+|    1 | hulk  |   20 | 987654321 |
+|    2 | steve |   21 |   9876598 |
++------+-------+------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> create table vikash2(id int(10),email varchar(50),password varchar(50), contact no. int(11))
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'no. int(11))' at line 1
+mysql> create table vikash2(id int(10), email varchar(50),password varchar(50), contact_no. int(11))
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '. int(11))' at line 1
+mysql> create table vikash2(id int(10), email varchar(50),password varchar(50), contact_no int(11))
+    -> ;
+Query OK, 0 rows affected, 2 warnings (2.51 sec)
+
+mysql> select *from vikash2
+    -> ;
+Empty set (0.00 sec)
+
+mysql> show tables
+    -> ;
++-----------------+
+| Tables_in_groot |
++-----------------+
+| vikash          |
+| vikash2         |
++-----------------+
+2 rows in set (0.01 sec)
+
+mysql> desc vikash2
+    -> ;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| id         | int         | YES  |     | NULL    |       |
+| email      | varchar(50) | YES  |     | NULL    |       |
+| password   | varchar(50) | YES  |     | NULL    |       |
+| contact_no | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select *from vikash2
+    -> ;
+Empty set (0.00 sec)
+
+mysql> insert into vikash2 values(1, vikash21@gmail.com, 12345678, 1234567890);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@gmail.com, 12345678, 1234567890)' at line 1
+mysql> insert into vikash2 values(1, vikash21@gmail.com, 12345678, 1234567890);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@gmail.com, 12345678, 1234567890)' at line 1
+mysql> insert into vikash2 values(1, "vikash21@gmail.com", '12345678', 1234567890);
+Query OK, 1 row affected (0.27 sec)
+
+mysql> select *from vikash2
+    -> ;
++------+--------------------+----------+------------+
+| id   | email              | password | contact_no |
++------+--------------------+----------+------------+
+|    1 | vikash21@gmail.com | 12345678 | 1234567890 |
++------+--------------------+----------+------------+
+1 row in set (0.00 sec)
+
+mysql> create alter table vikash2 name;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'alter table vikash2 name' at line 1
+mysql> create alter name table vikash2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'alter name table vikash2' at line 1
+mysql> update vikash2 set id=3 where id=1;
+Query OK, 1 row affected (0.47 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from vikash2;
++------+--------------------+----------+------------+
+| id   | email              | password | contact_no |
++------+--------------------+----------+------------+
+|    3 | vikash21@gmail.com | 12345678 | 1234567890 |
++------+--------------------+----------+------------+
+1 row in set (0.00 sec)
+
+mysql> update vikash2 set id=5 where password=12345678;
+Query OK, 1 row affected (0.35 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from vikash2;
++------+--------------------+----------+------------+
+| id   | email              | password | contact_no |
++------+--------------------+----------+------------+
+|    5 | vikash21@gmail.com | 12345678 | 1234567890 |
++------+--------------------+----------+------------+
+1 row in set (0.00 sec)
+
+mysql> update vikash2 set id=1 where id=1;
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> select *from vikash2;
++------+--------------------+----------+------------+
+| id   | email              | password | contact_no |
++------+--------------------+----------+------------+
+|    5 | vikash21@gmail.com | 12345678 | 1234567890 |
++------+--------------------+----------+------------+
+1 row in set (0.00 sec)
+
+mysql> update vikash2 set id=1 where id=5;
+Query OK, 1 row affected (0.44 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from vikash2;
++------+--------------------+----------+------------+
+| id   | email              | password | contact_no |
++------+--------------------+----------+------------+
+|    1 | vikash21@gmail.com | 12345678 | 1234567890 |
++------+--------------------+----------+------------+
+1 row in set (0.00 sec)
+
+mysql> insert into vikash2 values(2, "shrikant21@gmail.com", '12345678', 1234567890);
+Query OK, 1 row affected (0.48 sec)
+
+mysql> insert into vikash2 values(3, "hritesh21@gmail.com", '12345678', 1234567890);
+Query OK, 1 row affected (0.34 sec)
+
+mysql> insert into vikash2 values(4, "kiran21@gmail.com", '12345678', 1234567890);
+Query OK, 1 row affected (0.73 sec)
+
+mysql> select *from vikash2;
++------+----------------------+----------+------------+
+| id   | email                | password | contact_no |
++------+----------------------+----------+------------+
+|    1 | vikash21@gmail.com   | 12345678 | 1234567890 |
+|    2 | shrikant21@gmail.com | 12345678 | 1234567890 |
+|    3 | hritesh21@gmail.com  | 12345678 | 1234567890 |
+|    4 | kiran21@gmail.com    | 12345678 | 1234567890 |
++------+----------------------+----------+------------+
+4 rows in set (0.00 sec)
+
+mysql> create alter table vikash2 name varchar(40);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'alter table vikash2 name varchar(40)' at line 1
+mysql> create alter vikash2 name varchar(40);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'alter vikash2 name varchar(40)' at line 1
+mysql> create alter vikash2(name varchar(40));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'alter vikash2(name varchar(40))' at line 1
+mysql> create alter table vikash2(name varchar(40));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'alter table vikash2(name varchar(40))' at line 1
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> select id from vikash2 where password=12345678;
++------+
+| id   |
++------+
+|    1 |
+|    2 |
+|    3 |
+|    4 |
++------+
+4 rows in set (0.00 sec)
+
+mysql> update vikash2 set id=1 where id=4;
+Query OK, 1 row affected (0.35 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from vikash2;
++------+----------------------+----------+------------+
+| id   | email                | password | contact_no |
++------+----------------------+----------+------------+
+|    1 | vikash21@gmail.com   | 12345678 | 1234567890 |
+|    2 | shrikant21@gmail.com | 12345678 | 1234567890 |
+|    3 | hritesh21@gmail.com  | 12345678 | 1234567890 |
+|    1 | kiran21@gmail.com    | 12345678 | 1234567890 |
++------+----------------------+----------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select password from vikash2 where id=1;
++----------+
+| password |
++----------+
+| 12345678 |
+| 12345678 |
++----------+
+2 rows in set (0.00 sec)
+
+mysql> drop vikash;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'vikash' at line 1
+mysql> drop table vikash;
+Query OK, 0 rows affected (1.87 sec)
+
+mysql> desc g
+go      groot   groot1 
+mysql> desc groot;
+ERROR 1146 (42S02): Table 'groot.groot' doesn't exist
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| groot              |
+| information_schema |
+| kiran              |
+| mysql              |
+| performance_schema |
+| sys                |
+| vikash             |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> use groot;
+Database changed
+mysql> desc groot;
+ERROR 1146 (42S02): Table 'groot.groot' doesn't exist
+mysql> show tables;
++-----------------+
+| Tables_in_groot |
++-----------------+
+| vikash2         |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> create table vikash(id int(10),name varchar,age int,Ph_no int(11)) values(1,sdfg,21,12345);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',age int,Ph_no int(11)) values(1,sdfg,21,12345)' at line 1
+mysql> create table vikash(id int(10),name varchar,age int,Ph_no int(11)) values(1,"sdfg",21,12345);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',age int,Ph_no int(11)) values(1,"sdfg",21,12345)' at line 1
+mysql> create table vikash(id int(10),name varchar(30),age int(10),Ph_no int(11)) values(1,"sdfg",21,12345);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(1,"sdfg",21,12345)' at line 1
+mysql> create table vikash(id int(10),name varchar(30),age int(100),Ph_no int(11)) values(1,"sdfg",21,12345);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(1,"sdfg",21,12345)' at line 1
+mysql> create table vikash(id int(10),name varchar(30),age int(100),Ph_no int(11));
+Query OK, 0 rows affected, 3 warnings (3.30 sec)
+
+mysql> insert into vikash2 values(4, "kiran21@gmail.com", '12345678', 1234567890);
+Query OK, 1 row affected (0.30 sec)
+
+mysql> desc vikash;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(30) | YES  |     | NULL    |       |
+| age   | int         | YES  |     | NULL    |       |
+| Ph_no | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select *from vikash;
+Empty set (0.00 sec)
+
+mysql> insert into vikash values(4, "kiran21@gmail.com", '12345678', 1234567890);
+Query OK, 1 row affected (0.69 sec)
+
+mysql> select *from vikash;
++------+-------------------+----------+------------+
+| id   | name              | age      | Ph_no      |
++------+-------------------+----------+------------+
+|    4 | kiran21@gmail.com | 12345678 | 1234567890 |
++------+-------------------+----------+------------+
+1 row in set (0.00 sec)
+
+mysql> delete table vikash;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table vikash' at line 1
+mysql> drop table vikash;
+Query OK, 0 rows affected (1.73 sec)
+
+mysql> select *from vikash2;
++------+----------------------+----------+------------+
+| id   | email                | password | contact_no |
++------+----------------------+----------+------------+
+|    1 | vikash21@gmail.com   | 12345678 | 1234567890 |
+|    2 | shrikant21@gmail.com | 12345678 | 1234567890 |
+|    3 | hritesh21@gmail.com  | 12345678 | 1234567890 |
+|    1 | kiran21@gmail.com    | 12345678 | 1234567890 |
+|    4 | kiran21@gmail.com    | 12345678 | 1234567890 |
++------+----------------------+----------+------------+
+5 rows in set (0.00 sec)
+
+mysql> delete from vikash where id=2;
+ERROR 1146 (42S02): Table 'groot.vikash' doesn't exist
+mysql> delete from vikash2 where id=2;
+Query OK, 1 row affected (0.36 sec)
+
+mysql> select *from vikash2;
++------+---------------------+----------+------------+
+| id   | email               | password | contact_no |
++------+---------------------+----------+------------+
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 |
++------+---------------------+----------+------------+
+4 rows in set (0.00 sec)
+
+mysql> create alter table vikash2(name varchar(50));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'alter table vikash2(name varchar(50))' at line 1
+mysql> create alter set table vikash2(name varchar(50));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'alter set table vikash2(name varchar(50))' at line 1
+mysql> create alter set vikash2(name varchar(50));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'alter set vikash2(name varchar(50))' at line 1
+mysql> select *from vikash2;
++------+---------------------+----------+------------+
+| id   | email               | password | contact_no |
++------+---------------------+----------+------------+
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 |
++------+---------------------+----------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select id from vikash2 limit=3;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=3' at line 1
+mysql> select id from vikash2 asc;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc' at line 1
+mysql> select *from vikash2;
++------+---------------------+----------+------------+
+| id   | email               | password | contact_no |
++------+---------------------+----------+------------+
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 |
++------+---------------------+----------+------------+
+4 rows in set (0.00 sec)
+
+mysql> alter table vikash2 rename to vikash;
+Query OK, 0 rows affected (3.07 sec)
+
+mysql> show tables;
++-----------------+
+| Tables_in_groot |
++-----------------+
+| vikash          |
++-----------------+
+1 row in set (0.01 sec)
+
+mysql> alter database vikash rename to vikash3;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'rename to vikash3' at line 1
+mysql> show database;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| groot              |
+| information_schema |
+| kiran              |
+| mysql              |
+| performance_schema |
+| sys                |
+| vikash             |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> alter table vikash add (name varchar(50));
+Query OK, 0 rows affected (1.80 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc vikash;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| id         | int         | YES  |     | NULL    |       |
+| email      | varchar(50) | YES  |     | NULL    |       |
+| password   | varchar(50) | YES  |     | NULL    |       |
+| contact_no | int         | YES  |     | NULL    |       |
+| name       | varchar(50) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> select *from vikash;
++------+---------------------+----------+------------+------+
+| id   | email               | password | contact_no | name |
++------+---------------------+----------+------------+------+
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 | NULL |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |
++------+---------------------+----------+------------+------+
+4 rows in set (0.00 sec)
+
+mysql> alter table vikash add (address varchar(50) notnull);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'notnull)' at line 1
+mysql> alter table vikash add (address varchar(50) not null);
+Query OK, 0 rows affected (1.72 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select *from vikash;
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 | NULL |         |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
++------+---------------------+----------+------------+------+---------+
+4 rows in set (0.00 sec)
+
+mysql> delete table vikash where adress;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table vikash where adress' at line 1
+mysql> insert into vikash values(5,,,1234567890);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',,1234567890)' at line 1
+mysql> insert into vikash values(5,"",,1234567890,"","");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',1234567890,"","")' at line 1
+mysql> insert into vikash values(5,,,1234567890,,);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',,1234567890,,)' at line 1
+mysql> insert into vikash values(5,not null,not null,456567,"sas",not null);
+ERROR 1048 (23000): Column 'address' cannot be null
+mysql> insert into vikash values(5,not null,not null,456567,"sas",);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> insert into vikash values(5,not null,not null,456567,"sas","sdfty");
+Query OK, 1 row affected (0.36 sec)
+
+mysql> select *from vikash;
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 | NULL |         |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
++------+---------------------+----------+------------+------+---------+
+5 rows in set (0.00 sec)
+
+mysql> insert into vikash values(5,null,null,456567,"sas","sdfty");
+Query OK, 1 row affected (0.42 sec)
+
+mysql> select *from vikash;
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 | NULL |         |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
++------+---------------------+----------+------------+------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select *from vikash where id>=1 and id<=4;
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 | NULL |         |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
++------+---------------------+----------+------------+------+---------+
+4 rows in set (0.00 sec)
+
+mysql> select *from vikash where id between 3 and 5;
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
++------+---------------------+----------+------------+------+---------+
+4 rows in set (0.00 sec)
+
+mysql> create table vikky;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table vikky(id auto_increment,name text(50) values(1,"vikash");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'auto_increment,name text(50) values(1,"vikash")' at line 1
+mysql> create table vikky(id auto_increment,name text(50);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'auto_increment,name text(50)' at line 1
+mysql> create table vikky(id int(10) auto_increment,name text(50);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> create table vikky(id int(10) auto_increment,name varchar(50);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> create table vikky(id int(10) primary key,name text(50);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> create table vikky(id int(10) primary_key,name text(50);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'primary_key,name text(50)' at line 1
+mysql> create table vikky(id int(10) primary key,name text(50));
+Query OK, 0 rows affected, 1 warning (3.12 sec)
+
+mysql> desc vikky;
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| id    | int      | NO   | PRI | NULL    |       |
+| name  | tinytext | YES  |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> insert into vikky values(1,"vikash");
+Query OK, 1 row affected (0.45 sec)
+
+mysql> select *from vikky;
++----+--------+
+| id | name   |
++----+--------+
+|  1 | vikash |
++----+--------+
+1 row in set (0.00 sec)
+
+mysql> insert into vikky values(1,"vik");
+ERROR 1062 (23000): Duplicate entry '1' for key 'vikky.PRIMARY'
+mysql> insert into vikky values(2,"vik");
+Query OK, 1 row affected (0.37 sec)
+
+mysql> select *from vikky;
++----+--------+
+| id | name   |
++----+--------+
+|  1 | vikash |
+|  2 | vik    |
++----+--------+
+2 rows in set (0.00 sec)
+
+mysql> create table vik(id int(10) auto increment,name text(50));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'auto increment,name text(50))' at line 1
+mysql> create table vik(id int(10) auto_increment,name text(50));
+ERROR 1075 (42000): Incorrect table definition; there can be only one auto column and it must be defined as a key
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'auto increment,name text(50))' at line 1
+mysql> create table vik(id auto increment,name text(50));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'auto increment,name text(50))' at line 1
+mysql> select *from vikash;
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 | NULL |         |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
++------+---------------------+----------+------------+------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select *from vikash limit 5;
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 | NULL |         |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
++------+---------------------+----------+------------+------+---------+
+5 rows in set (0.00 sec)
+
+mysql> select *from vikash limit 3;
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 | NULL |         |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
++------+---------------------+----------+------------+------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select *from vikash limit 3 offset3;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'offset3' at line 1
+mysql> select *from vikash limit 3 offset 3;
++------+-------------------+----------+------------+------+---------+
+| id   | email             | password | contact_no | name | address |
++------+-------------------+----------+------------+------+---------+
+|    4 | kiran21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    5 | NULL              | NULL     |     456567 | sas  | sdfty   |
+|    5 | NULL              | NULL     |     456567 | sas  | sdfty   |
++------+-------------------+----------+------------+------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select *from vikash limit 5 offset 3;
++------+-------------------+----------+------------+------+---------+
+| id   | email             | password | contact_no | name | address |
++------+-------------------+----------+------------+------+---------+
+|    4 | kiran21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    5 | NULL              | NULL     |     456567 | sas  | sdfty   |
+|    5 | NULL              | NULL     |     456567 | sas  | sdfty   |
++------+-------------------+----------+------------+------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select *from vikash order by id asc;
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 | NULL |         |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
++------+---------------------+----------+------------+------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select *from vikash order by id desc;
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 | NULL |         |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
++------+---------------------+----------+------------+------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select *from vikash order by id desc limit 3;
++------+-------------------+----------+------------+------+---------+
+| id   | email             | password | contact_no | name | address |
++------+-------------------+----------+------------+------+---------+
+|    5 | NULL              | NULL     |     456567 | sas  | sdfty   |
+|    5 | NULL              | NULL     |     456567 | sas  | sdfty   |
+|    4 | kiran21@gmail.com | 12345678 | 1234567890 | NULL |         |
++------+-------------------+----------+------------+------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select *from vikash order by id desc;
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 | NULL |         |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
++------+---------------------+----------+------------+------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select *from vikash;
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 | NULL |         |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
++------+---------------------+----------+------------+------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select *from vikash limit5;
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 | NULL |         |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
++------+---------------------+----------+------------+------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select *from vikash limit5 offset 3;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'offset 3' at line 1
+mysql> select *from vikash limit 5 offset 3;
++------+-------------------+----------+------------+------+---------+
+| id   | email             | password | contact_no | name | address |
++------+-------------------+----------+------------+------+---------+
+|    4 | kiran21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    5 | NULL              | NULL     |     456567 | sas  | sdfty   |
+|    5 | NULL              | NULL     |     456567 | sas  | sdfty   |
++------+-------------------+----------+------------+------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select *from order by connect;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by connect' at line 1
+mysql> select *from order by contact_no asc;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by contact_no asc' at line 1
+mysql> select *from vilkash order by contact_no asc;
+ERROR 1146 (42S02): Table 'groot.vilkash' doesn't exist
+mysql> select *from vikash order by contact_no asc;
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 | NULL |         |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
++------+---------------------+----------+------------+------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select *from vikash order by contact_no desc;
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 | NULL |         |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
++------+---------------------+----------+------------+------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select *from vikash order by email desc;
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 | NULL |         |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
++------+---------------------+----------+------------+------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select *from vikash order by address desc;
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
+|    5 | NULL                | NULL     |     456567 | sas  | sdfty   |
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 | NULL |         |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
++------+---------------------+----------+------------+------+---------+
+6 rows in set (0.00 sec)
+
+mysql> select *from vikash order by id desc limit 3;
++------+-------------------+----------+------------+------+---------+
+| id   | email             | password | contact_no | name | address |
++------+-------------------+----------+------------+------+---------+
+|    5 | NULL              | NULL     |     456567 | sas  | sdfty   |
+|    5 | NULL              | NULL     |     456567 | sas  | sdfty   |
+|    4 | kiran21@gmail.com | 12345678 | 1234567890 | NULL |         |
++------+-------------------+----------+------------+------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select *from vikash order by id asc limit 3;
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    1 | vikash21@gmail.com  | 12345678 | 1234567890 | NULL |         |
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
++------+---------------------+----------+------------+------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select *from vikash order by id asc limit 3 offset 3;
++------+-------------------+----------+------------+------+---------+
+| id   | email             | password | contact_no | name | address |
++------+-------------------+----------+------------+------+---------+
+|    4 | kiran21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    5 | NULL              | NULL     |     456567 | sas  | sdfty   |
+|    5 | NULL              | NULL     |     456567 | sas  | sdfty   |
++------+-------------------+----------+------------+------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select *from vikash order by id asc limit 3 offset 1;
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    1 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    4 | kiran21@gmail.com   | 12345678 | 1234567890 | NULL |         |
++------+---------------------+----------+------------+------+---------+
+3 rows in set (0.00 sec)
+
+mysql> select *from vikash where email like "h%";
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
++------+---------------------+----------+------------+------+---------+
+1 row in set (0.00 sec)
+
+mysql> select *from vikash where email like "hr%";
++------+---------------------+----------+------------+------+---------+
+| id   | email               | password | contact_no | name | address |
++------+---------------------+----------+------------+------+---------+
+|    3 | hritesh21@gmail.com | 12345678 | 1234567890 | NULL |         |
++------+---------------------+----------+------------+------+---------+
+1 row in set (0.00 sec)
+
+mysql> select *from vikash where email like "k%";
++------+-------------------+----------+------------+------+---------+
+| id   | email             | password | contact_no | name | address |
++------+-------------------+----------+------------+------+---------+
+|    1 | kiran21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    4 | kiran21@gmail.com | 12345678 | 1234567890 | NULL |         |
++------+-------------------+----------+------------+------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select *from vikash where email like "r%";
+Empty set (0.01 sec)
+
+mysql> select *from vikash where email like "kiran20%";
+Empty set (0.00 sec)
+
+mysql> select *from vikash where email like "kira%";
++------+-------------------+----------+------------+------+---------+
+| id   | email             | password | contact_no | name | address |
++------+-------------------+----------+------------+------+---------+
+|    1 | kiran21@gmail.com | 12345678 | 1234567890 | NULL |         |
+|    4 | kiran21@gmail.com | 12345678 | 1234567890 | NULL |         |
++------+-------------------+----------+------------+------+---------+
+2 rows in set (0.00 sec)
+
+mysql> select sum(id) from vikash;
++---------+
+| sum(id) |
++---------+
+|      19 |
++---------+
+1 row in set (0.01 sec)
+
+mysql> select sum(contact_no) from vikash;
++-----------------+
+| sum(contact_no) |
++-----------------+
+|      4939184694 |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM artists WHERE name REGEXP '^[abc]'
+    -> SELECT * FROM vikash WHERE name REG '^[abc]'
+[2]+  Stopped                 mysql -u root -p
+navgurukul20@navgurukul20-ThinkPad-E14:~$ mysql -u root -p
+Enter password: 
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+navgurukul20@navgurukul20-ThinkPad-E14:~$ mysql -u root -p
+Enter password: 
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+navgurukul20@navgurukul20-ThinkPad-E14:~$ mysql -u root -p
+Enter password: 
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+navgurukul20@navgurukul20-ThinkPad-E14:~$ mysql -u root -p
+Enter password: 
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+navgurukul20@navgurukul20-ThinkPad-E14:~$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 14
+Server version: 8.0.27-0ubuntu0.20.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| groot              |
+| information_schema |
+| kiran              |
+| mysql              |
+| performance_schema |
+| sys                |
+| vikash             |
++--------------------+
+7 rows in set (0.19 sec)
+
+mysql> use vikash
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> use vikash;
+Database changed
+mysql> show table
+    -> show tables;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show tables' at line 2
+mysql> show tables;
++------------------+
+| Tables_in_vikash |
++------------------+
+| list             |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> desc list;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| id    | int          | YES  |     | NULL    |       |
+| name  | varchar(255) | YES  |     | NULL    |       |
+| city  | varchar(255) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+3 rows in set (0.11 sec)
+
+mysql> select * from list;
++------+--------+--------+
+| id   | name   | city   |
++------+--------+--------+
+|    1 | vikash | patana |
++------+--------+--------+
+1 row in set (0.23 sec)
+
+mysql> select name from list;
++--------+
+| name   |
++--------+
+| vikash |
++--------+
+1 row in set (0.00 sec)
+
+mysql> select id from list;
++------+
+| id   |
++------+
+|    1 |
++------+
+1 row in set (0.00 sec)
+
+mysql> select from city;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from city' at line 1
+mysql> select cit from list;
+ERROR 1054 (42S22): Unknown column 'cit' in 'field list'
+mysql> select city from list;
++--------+
+| city   |
++--------+
+| patana |
++--------+
+1 row in set (0.00 sec)
+
+mysql> insert into list values(2,'riyaz','Delhi');
+Query OK, 1 row affected (0.87 sec)
+
+mysql> show tables;
++------------------+
+| Tables_in_vikash |
++------------------+
+| list             |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> select from * list;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from * list' at line 1
+mysql> select * from list;
++------+--------+--------+
+| id   | name   | city   |
++------+--------+--------+
+|    1 | vikash | patana |
+|    2 | riyaz  | Delhi  |
++------+--------+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from list where id=3;
+Empty set (0.00 sec)
+
+mysql> select * from list where id=2;
++------+-------+-------+
+| id   | name  | city  |
++------+-------+-------+
+|    2 | riyaz | Delhi |
++------+-------+-------+
+1 row in set (0.00 sec)
+
+mysql> insert * from list add (status);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from list add (status)' at line 1
+mysql> insert * from list add ('status);
+    '> 
+    '> s
+    '> dljfsdfjs
+    '> ;
+    '> select * from
+    '> Q
+    '> q
+    '> ()
+    '> '
+    -> "
+    "> '
+    "> ;
+    "> ; exit
+    "> exit;
+    "> exit
+    "> ^C                            
+
+^C
+mysql> create alter list add status;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'alter list add status' at line 1
+mysql> create alter list add status(varchar(50));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'alter list add status(varchar(50))' at line 1
+mysql> create alter table list add status(varchar(50));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'alter table list add status(varchar(50))' at line 1
+mysql> alter table list add status;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> alter table list add status(varchar(50));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(varchar(50))' at line 1
+mysql> alter table list add status varchar(50);
+Query OK, 0 rows affected (2.97 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> desc list
+    -> ;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| id     | int          | YES  |     | NULL    |       |
+| name   | varchar(255) | YES  |     | NULL    |       |
+| city   | varchar(255) | YES  |     | NULL    |       |
+| status | varchar(50)  | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> alter table list add review varchar(70) not null;
+Query OK, 0 rows affected (2.20 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc list;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| id     | int          | YES  |     | NULL    |       |
+| name   | varchar(255) | YES  |     | NULL    |       |
+| city   | varchar(255) | YES  |     | NULL    |       |
+| status | varchar(50)  | YES  |     | NULL    |       |
+| review | varchar(70)  | NO   |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table list add riyaz varchar(89) khan varchar(80);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'khan varchar(80)' at line 1
+mysql> alter table list add riyaz varchar(89), khan varchar(80);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'khan varchar(80)' at line 1
+mysql> alter table list add( riyaz varchar(89), khan varchar(80));
+Query OK, 0 rows affected (1.87 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc list;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| id     | int          | YES  |     | NULL    |       |
+| name   | varchar(255) | YES  |     | NULL    |       |
+| city   | varchar(255) | YES  |     | NULL    |       |
+| status | varchar(50)  | YES  |     | NULL    |       |
+| review | varchar(70)  | NO   |     | NULL    |       |
+| riyaz  | varchar(89)  | YES  |     | NULL    |       |
+| khan   | varchar(80)  | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> UPDATE mytable SET id = id + 1 where id > 5 ORDER BY id ASC
+    -> ;
+ERROR 1146 (42S02): Table 'vikash.mytable' doesn't exist
+mysql> UPDATE list SET id = id + 1 where id > 2 ORDER BY id ASC;
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> desc list
+    -> ;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| id     | int          | YES  |     | NULL    |       |
+| name   | varchar(255) | YES  |     | NULL    |       |
+| city   | varchar(255) | YES  |     | NULL    |       |
+| status | varchar(50)  | YES  |     | NULL    |       |
+| review | varchar(70)  | NO   |     | NULL    |       |
+| riyaz  | varchar(89)  | YES  |     | NULL    |       |
+| khan   | varchar(80)  | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> UPDATE list SET id = id + 1 where id > 2 ORDER BY id ASC;
+[3]+  Stopped                 mysql -u root -p
+navgurukul20@navgurukul20-ThinkPad-E14:~$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 15
+Server version: 8.0.27-0ubuntu0.20.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| groot              |
+| information_schema |
+| kiran              |
+| mysql              |
+| performance_schema |
+| sys                |
+| vikash             |
++--------------------+
+7 rows in set (0.10 sec)
+
+mysql> select * from  list;
+ERROR 1046 (3D000): No database selected
+mysql> use vikash;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| groot              |
+| information_schema |
+| kiran              |
+| mysql              |
+| performance_schema |
+| sys                |
+| vikash             |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> use vikash;
+Database changed
+mysql> select * from table list;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table list' at line 1
+mysql> desc list;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| id     | int          | YES  |     | NULL    |       |
+| name   | varchar(255) | YES  |     | NULL    |       |
+| city   | varchar(255) | YES  |     | NULL    |       |
+| status | varchar(50)  | YES  |     | NULL    |       |
+| review | varchar(70)  | NO   |     | NULL    |       |
+| riyaz  | varchar(89)  | YES  |     | NULL    |       |
+| khan   | varchar(80)  | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> UPDATE mytable SET id = id + 1 where id > 5 ORDER BY id ASC
+    -> ;
+ERROR 1146 (42S02): Table 'vikash.mytable' doesn't exist
+mysql> UPDATE status SET id = id + 1 where id > 5 ORDER BY id ASC
+    -> ;
+ERROR 1146 (42S02): Table 'vikash.status' doesn't exist
+mysql> UPDATE myttable SET id = id + 1 where id > 2 ORDER BY id ASC
+    -> ;
+ERROR 1146 (42S02): Table 'vikash.myttable' doesn't exist
+mysql> UPDATE list SET id = id + 1 where id > 2 ORDER BY id ASC
+    -> ;
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> select * from list;
++------+--------+--------+--------+--------+-------+------+
+| id   | name   | city   | status | review | riyaz | khan |
++------+--------+--------+--------+--------+-------+------+
+|    1 | vikash | patana | NULL   |        | NULL  | NULL |
+|    2 | riyaz  | Delhi  | NULL   |        | NULL  | NULL |
++------+--------+--------+--------+--------+-------+------+
+2 rows in set (0.00 sec)
+
+mysql> UPDATE list SET id = id + 1 where id > 1 ORDER BY id ASC
+    -> ;
+Query OK, 1 row affected (0.40 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from list;
++------+--------+--------+--------+--------+-------+------+
+| id   | name   | city   | status | review | riyaz | khan |
++------+--------+--------+--------+--------+-------+------+
+|    1 | vikash | patana | NULL   |        | NULL  | NULL |
+|    3 | riyaz  | Delhi  | NULL   |        | NULL  | NULL |
++------+--------+--------+--------+--------+-------+------+
+2 rows in set (0.00 sec)
+
+mysql> UPDATE list SET id = id + 1 where name='riyaz' ORDER BY id ASC;
+Query OK, 1 row affected (0.31 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from list;
++------+--------+--------+--------+--------+-------+------+
+| id   | name   | city   | status | review | riyaz | khan |
++------+--------+--------+--------+--------+-------+------+
+|    1 | vikash | patana | NULL   |        | NULL  | NULL |
+|    4 | riyaz  | Delhi  | NULL   |        | NULL  | NULL |
++------+--------+--------+--------+--------+-------+------+
+2 rows in set (0.00 sec)
+
+mysql> show tables;
++------------------+
+| Tables_in_vikash |
++------------------+
+| list             |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> create table vik(id auto_increments,class text, laptop text,modle text);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'auto_increments,class text, laptop text,modle text)' at line 1
+mysql> create table vik(id increments,class text, laptop text,modle text);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'increments,class text, laptop text,modle text)' at line 1
+mysql> create table vik(id int  auto_increments,class text, laptop text,modle text);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'auto_increments,class text, laptop text,modle text)' at line 1
+mysql> create table vik(id int  auto_increments,class text, laptop text,modle text);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'auto_increments,class text, laptop text,modle text)' at line 1
+mysql> create table vik(id int  auto_increment,class text, laptop text,modle text);
+ERROR 1075 (42000): Incorrect table definition; there can be only one auto column and it must be defined as a key
+mysql> create table vik(id int(11)  auto_increment,class text, laptop text,modle text);
+ERROR 1075 (42000): Incorrect table definition; there can be only one auto column and it must be defined as a key
+mysql> create table vik(id int(11)  AUTO_INCREMENT,class text, laptop text,modle text);
+ERROR 1075 (42000): Incorrect table definition; there can be only one auto column and it must be defined as a key
+mysql> CREATE TABLE animals (
+    ->      id INT NOT NULL AUTO_INCREMENT,
+    ->      name CHAR(30) NOT NULL,
+    ->      PRIMARY KEY (id)
+    -> );
+^CEnter password: 
+^C -- Sorry, cannot connect to the server to kill query, giving up ...
+Query OK, 0 rows affected (8.54 sec)
+
+mysql> CREATE TABLE Ank ( id INT NOT NULL AUTO_INCREMENT, laptop VARCHAR(30) NOT NULL, PRIMARY KEY (id) );
+Query OK, 0 rows affected (4.21 sec)
+
+mysql> desc Ank;
++--------+-------------+------+-----+---------+----------------+
+| Field  | Type        | Null | Key | Default | Extra          |
++--------+-------------+------+-----+---------+----------------+
+| id     | int         | NO   | PRI | NULL    | auto_increment |
+| laptop | varchar(30) | NO   |     | NULL    |                |
++--------+-------------+------+-----+---------+----------------+
+2 rows in set (0.04 sec)
+
+mysql> insert into Ank values("hp");
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into Ank values(1,"hp");
+Query OK, 1 row affected (0.44 sec)
+
+mysql> insert into Ank (laptop) values("dell");
+Query OK, 1 row affected (0.59 sec)
+
+mysql> select * from Ank;
++----+--------+
+| id | laptop |
++----+--------+
+|  1 | hp     |
+|  2 | dell   |
++----+--------+
+2 rows in set (0.00 sec)
+
+mysql> select * from Ank list where list.id=Ank.id;
+ERROR 1054 (42S22): Unknown column 'Ank.id' in 'where clause'
+mysql> select * from Ank list where list.id Ank.id=1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Ank.id=1' at line 1
+mysql> select * from Ank list where id=1;
++----+--------+
+| id | laptop |
++----+--------+
+|  1 | hp     |
++----+--------+
+1 row in set (0.00 sec)
+
+mysql> select * from Ank list where list.id=Ank.id and list.id=1;
+ERROR 1054 (42S22): Unknown column 'Ank.id' in 'where clause'
+mysql> select * from Ank ,list where list.id=Ank.id and list.id=1;
++----+--------+------+--------+--------+--------+--------+-------+------+
+| id | laptop | id   | name   | city   | status | review | riyaz | khan |
++----+--------+------+--------+--------+--------+--------+-------+------+
+|  1 | hp     |    1 | vikash | patana | NULL   |        | NULL  | NULL |
++----+--------+------+--------+--------+--------+--------+-------+------+
+1 row in set (0.10 sec)
+
+mysql> select * from Ank ,list where list.id=Ank.id and list.id=2;
+Empty set (0.00 sec)
+
+mysql> select list.name , Ank.laptop from Ank ,list where list.id=Ank.id and list.id=1;
++--------+--------+
+| name   | laptop |
++--------+--------+
+| vikash | hp     |
++--------+--------+
+1 row in set (0.10 sec)
+
+mysql> table Ank trucate;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'trucate' at line 1
+mysql> table Ank truncate;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'truncate' at line 1
+mysql>  truncate table Ank;
+Query OK, 0 rows affected (4.52 sec)
+
+mysql> show tables;
++------------------+
+| Tables_in_vikash |
++------------------+
+| Ank              |
+| animals          |
+| list             |
++------------------+
+3 rows in set (0.16 sec)
+
+mysql> select * from Ank;
+Empty set (0.00 sec)
+
+mysql> insert into Ank (laptop) values("dell");
+Query OK, 1 row affected (0.51 sec)
+
+mysql> insert into Ank (laptop) values("hp");
+Query OK, 1 row affected (0.42 sec)
+
+mysql> select * from Ank;
++----+--------+
+| id | laptop |
++----+--------+
+|  1 | dell   |
+|  2 | hp     |
++----+--------+
+2 rows in set (0.00 sec)
+
+mysql> delete table Ank;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table Ank' at line 1
+mysql> delet table Ank;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'delet table Ank' at line 1
+mysql> deleteAll table Ank;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'deleteAll table Ank' at line 1
+mysql> delete from Ank;
+Query OK, 2 rows affected (0.40 sec)
+
+mysql> select * from Ank;
+Empty set (0.00 sec)
+
+mysql> insert into Ank (laptop) values("hp");
+Query OK, 1 row affected (0.48 sec)
+
+mysql> select * from Ank;
++----+--------+
+| id | laptop |
++----+--------+
+|  3 | hp     |
++----+--------+
+1 row in set (0.00 sec)
+
+

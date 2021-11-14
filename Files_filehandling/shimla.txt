@@ -1,0 +1,6 @@
+rati - shimla
+raghu - shimla
+puneet - shimla
+rajeev - shimla
+priyanka - shimla
+deepti - shimla
