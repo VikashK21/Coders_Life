@@ -1,0 +1,56 @@
+{
+  "posts": [
+    {
+      "name": "Anand",
+      "title": "He an actor working in Trollywood Industry",
+      "author": "Me",
+      "id": 2
+    },
+    {
+      "name": "S.Kiran",
+      "title": "He is learning the core concept of backe_end, right now.",
+      "author": "Me",
+      "id": 3
+    },
+    {
+      "name": "S.Priya",
+      "title": "She is learning front_end + backe_end, right now.",
+      "author": "Me",
+      "id": 4
+    },
+    {
+      "name": "S.S.S.Shrikant",
+      "title": "He is learning front_end + backe_end + designing, right now.",
+      "author": "Me",
+      "id": 5
+    },
+    {
+      "name": "Ujjwal",
+      "age": 21,
+      "color": "white-black",
+      "id": 6
+    },
+    {
+      "name": "Anuragi",
+      "age": 20,
+      "color": "white-black",
+      "id": 7
+    },
+    {
+      "name": "Nasir",
+      "age": 19,
+      "color": "white-black",
+      "id": 8
+    },
+    {
+      "name": "K",
+      "title": "Jai Veeru",
+      "author": "Ramesh Bhatta Charya",
+      "id": 9
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

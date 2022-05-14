@@ -1,0 +1,21 @@
+{
+  "name": "learning_prisma",
+  "version": "1.0.0",
+  "description": "This is the introduction of an ORM called PRISMA.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^3.14.0",
+    "express": "^4.18.1",
+    "joi": "^17.6.0",
+    "prisma": "^3.14.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
