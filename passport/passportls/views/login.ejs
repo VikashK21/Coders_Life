@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <% if(messages.errr) { %>
+        <% messages.errr %>
+    <% } %>
+    <form action="/login" method="post">
+        <br><div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+
+        <br><div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <br><button type="submit">Login</button>
+    </form>
+    <br><a href="/register">Register</a>
+</body>
+</html>

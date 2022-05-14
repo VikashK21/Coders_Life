@@ -1,0 +1,19 @@
+{
+  "name": "json_axios_server",
+  "version": "1.0.0",
+  "description": "Practicing the crud operations with the axios of json-server.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Vikash",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}

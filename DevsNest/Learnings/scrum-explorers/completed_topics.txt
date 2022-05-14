@@ -1,0 +1,4 @@
+Firebase_authentication
+Redux
+
+Unit Testing and Graphql
